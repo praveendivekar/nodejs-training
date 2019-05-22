@@ -1,2 +1,2 @@
 # nodejs-training
-Repository for Node js training
+Repository content for Megathon Node js training
