@@ -3,7 +3,7 @@ import express from 'express';
 
 var appRouter = express.Router();
 
-appRouter.get('/:id', (req, res, next) => {
+appRouter.get('/', (req, res, next) => {
   res.send({message: 'Hello!'})
 });
 
