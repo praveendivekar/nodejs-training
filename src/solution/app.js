@@ -5,9 +5,9 @@ import logger from './middlewares/logger';
 const app = express();
 const PORT = 3000;
 
-app.use(logger);
+// pp.use(logger);
 
-app.get('/', (req, res) => {
+app.get('/',[logger] ,(req, res) => {
   res.send({message: 'Hello! from app'});
 })
 
