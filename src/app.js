@@ -1,13 +1,24 @@
-// TODO:- implement routing and error and custom middlware in the flow
 import express from 'express';
+import http from 'http';
+import io from 'socket.io';
+import path from 'path';
 
 const app = express();
+const server = http.Server(app); // instantiate an http instance for server
+const socketIo = io(server);
 const PORT = 3000;
 
-// TODO - implement a router level middleware for the request api/custom
+app.get('/', (req, res) => {
+  res.status(200).sendFile(path.join(__dirname + '/index.html'));
+});
 
-// TODO - implement a router level middleware for api/admin and throw error for restricted access
+socketIo.on('connection', (socket) => {
+  console.log('User is connected');
+  socket.on('message', (message) => {
+    socketIo.emit('message', message);
+  })
+})
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`App is running at ${PORT}`);
 });
