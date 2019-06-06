@@ -27,3 +27,9 @@ An Express application can use the following types of middleware:
     3. Error-handling middleware
     4. Built-in middleware
     5. Third-party middleware
+
+#Scoket.io
+Socket.IO is a library that enables real-time, bidirectional and event-based communication between the browser and the server. It consists of:
+
+ 1. Node.js server: Source | API
+ 2. Javascript client library for the browser (which can be also run from Node.js): Source | API
